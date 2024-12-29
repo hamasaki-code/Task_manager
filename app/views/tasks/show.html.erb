@@ -1,0 +1,25 @@
+<h1>Task Details</h1>
+
+<p>
+  <strong>Title:</strong>
+  <%= @task.title %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @task.description %>
+</p>
+
+<p>
+  <strong>Due Date:</strong>
+  <%= @task.due_date&.strftime("%Y-%m-%d %H:%M") %>
+</p>
+
+<p>
+  <strong>Completed:</strong>
+  <%= @task.completed ? "Yes" : "No" %>
+</p>
+
+<%= link_to 'Back to Task List', tasks_path %>
+<%= link_to 'Edit Task', edit_task_path(@task) %>
+<%= link_to 'Delete Task', task_path(@task), method: :delete, data: { confirm: 'Are you sure?' } %>
