@@ -1,0 +1,23 @@
+<h1>Tasks List</h1>
+<%= link_to 'New Task', new_task_path %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Description</th>
+      <th>Due Date</th>
+      <th>Completed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @tasks.each do |task| %>
+    <tr>
+      <th><%= task.title %></th>
+      <th><%= task.description %></th>
+      <th><%= task.due_date&.strftime("%Y-%m-%d %H:%M") %></th>
+      <th><%= task.completed ? 'Yes' : 'No' %></td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
