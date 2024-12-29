@@ -13,7 +13,7 @@
   <tbody>
     <% @tasks.each do |task| %>
     <tr>
-      <th><%= task.title %></th>
+      <td><%= link_to task.title, task_path(task) %></td>
       <th><%= task.description %></th>
       <th><%= task.due_date&.strftime("%Y-%m-%d %H:%M") %></th>
       <th><%= task.completed ? 'Yes' : 'No' %></td>
