@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action :set_task, only: [:show, :edit, :update, :destroy]
+  before_action only: [:new, :create, :index, :show, :edit, :update]
 
   def index
     @tasks = Task.all
@@ -23,13 +23,15 @@ class TasksController < ApplicationController
   end
 
   def edit
+    @task = Task.find(params[:id])
   end
 
   def update
+    @task = Task.find(params[:id])
     if @task.update(task_params)
       redirect_to @task, notice: 'Task was successfully updated.'
     else
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
@@ -39,10 +41,6 @@ class TasksController < ApplicationController
   end
 
   private
-
-  def set_task
-    @task = Task.find(params[:id])
-  end
 
   def task_params
     params.require(:task).permit(:title, :description, :due_date, :completed)
