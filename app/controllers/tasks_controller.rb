@@ -1,5 +1,5 @@
 class TasksController < ApplicationController
-  before_action only: [:new, :create, :index, :show, :edit, :update]
+  before_action :set_task, only: [:edit, :update, :destroy]
 
   def index
     @tasks = Task.all
@@ -23,11 +23,9 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = Task.find(params[:id])
   end
 
   def update
-    @task = Task.find(params[:id])
     if @task.update(task_params)
       redirect_to @task, notice: 'Task was successfully updated.'
     else
@@ -36,11 +34,18 @@ class TasksController < ApplicationController
   end
 
   def destroy
-    @task.destroy
-    redirect_to tasks_url, notice: 'Task was successfully deleted.'
+    if @task.destroy
+      redirect_to tasks_path, notice: 'Task was successfully deleted.'
+    else
+      redirect_to tasks_path, alert: 'Failed to delete the task.'
+    end
   end
 
   private
+
+  def set_task
+    @task = current_user.tasks.find(params[:id])
+  end
 
   def task_params
     params.require(:task).permit(:title, :description, :due_date, :completed)
