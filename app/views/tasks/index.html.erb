@@ -15,10 +15,10 @@
   </thead>
   <tbody>
     <% @tasks.each do |task| %>
-    <tr>
+    <tr class="priority-<%= task.priority %>">
       <td><%= task.title %></td>
       <td><%= task.description %></td>
-      <td><%= task.due_date&.strftime("%Y-%m-%d %H:%M") %></td>
+      <td><%= task.due_date&.strftime("%Y-%m-%d") %></td>
       <td><%= task.completed ? 'Yes' : 'No' %></td>
       <td>
         <%= link_to 'View', task_path(task), class: 'btn btn-sm btn-success' %>

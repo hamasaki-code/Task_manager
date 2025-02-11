@@ -18,9 +18,9 @@
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;;
-  }
-  clearfix::after {
+  box-sizing: border-box;
+}
+.clearfix::after {
   content: "fas fa-user-cog";
   display: block;
   clear: both;
@@ -33,7 +33,7 @@
   margin: 55px 10% 0px 8%;
 }
 .notice {
-  color: green
+  color: green;
 }
 .error {
   color: red;
@@ -45,4 +45,25 @@
 }
 .actions {
   margin-top: 5px;
+}
+
+/* 重要度ごとのスタイル */
+.priority-1 {
+  background-color: #ffcccc;
+}
+
+.priority-2 {
+  background-color: #ff9999;
+}
+
+.priority-3 {
+  background-color: #ff6666;
+}
+
+.priority-4 {
+  background-color: #ff3333;
+}
+
+.priority-5 {
+  background-color: #ff0000;
 }
