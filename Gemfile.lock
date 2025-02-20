@@ -117,6 +117,7 @@ GEM
     erubi (1.13.1)
     execjs (2.10.0)
     ffi (1.17.0-x86_64-darwin)
+    ffi (1.17.0-x86_64-linux-gnu)
     globalid (1.2.1)
       activesupport (>= 6.1)
     i18n (1.14.6)
@@ -134,7 +135,7 @@ GEM
       activesupport (>= 5.0.0)
     json (2.9.1)
     language_server-protocol (3.17.0.3)
-    logger (1.6.4)
+    logger (1.6.6)
     loofah (2.23.1)
       crass (~> 1.0.2)
       nokogiri (>= 1.12.0)
@@ -158,21 +159,9 @@ GEM
     net-smtp (0.5.0)
       net-protocol
     nio4r (2.7.4)
-    nokogiri (1.18.0-aarch64-linux-gnu)
-      racc (~> 1.4)
-    nokogiri (1.18.0-aarch64-linux-musl)
-      racc (~> 1.4)
-    nokogiri (1.18.0-arm-linux-gnu)
-      racc (~> 1.4)
-    nokogiri (1.18.0-arm-linux-musl)
-      racc (~> 1.4)
-    nokogiri (1.18.0-arm64-darwin)
-      racc (~> 1.4)
     nokogiri (1.18.0-x86_64-darwin)
       racc (~> 1.4)
     nokogiri (1.18.0-x86_64-linux-gnu)
-      racc (~> 1.4)
-    nokogiri (1.18.0-x86_64-linux-musl)
       racc (~> 1.4)
     orm_adapter (0.5.0)
     parallel (1.26.3)
@@ -234,7 +223,7 @@ GEM
     responders (3.1.1)
       actionpack (>= 5.2)
       railties (>= 5.2)
-    rexml (3.4.0)
+    rexml (3.4.1)
     rspec-core (3.13.2)
       rspec-support (~> 3.13.0)
     rspec-expectations (3.13.3)
@@ -281,7 +270,7 @@ GEM
       rubocop-performance
       rubocop-rails
     ruby-progressbar (1.13.0)
-    rubyzip (2.3.2)
+    rubyzip (2.4.1)
     sassc (2.4.0)
       ffi (~> 1.9)
     sassc-rails (2.1.2)
@@ -291,7 +280,7 @@ GEM
       sprockets-rails
       tilt
     securerandom (0.4.1)
-    selenium-webdriver (4.27.0)
+    selenium-webdriver (4.29.0)
       base64 (~> 0.2)
       logger (~> 1.4)
       rexml (~> 3.2, >= 3.2.5)
@@ -335,15 +324,8 @@ GEM
     zeitwerk (2.7.1)
 
 PLATFORMS
-  aarch64-linux-gnu
-  aarch64-linux-musl
-  arm-linux-gnu
-  arm-linux-musl
-  arm64-darwin
   x86_64-darwin
   x86_64-linux
-  x86_64-linux-gnu
-  x86_64-linux-musl
 
 DEPENDENCIES
   bootsnap
