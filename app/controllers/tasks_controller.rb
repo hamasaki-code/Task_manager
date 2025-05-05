@@ -3,6 +3,18 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all
+    respond_to do |format|
+      format.html # 通常のビュー
+      format.json do
+        render json: @tasks.map { |task|
+          {
+            title: task.title,
+            start: task.due_date,
+            className: "priority-#{task.priority}" # 優先度ごとのCSSクラス
+          }
+        }
+      end
+    end
   end
 
   def show
@@ -11,6 +23,10 @@ class TasksController < ApplicationController
 
   def new
     @task = Task.new
+  end
+
+  def calendar
+    @tasks = Task.all
   end
 
   def create

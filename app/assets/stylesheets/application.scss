@@ -1,1 +1,15 @@
-@import "bootstrap";
+@import "@fullcalendar/core/main.css";
+@import "@fullcalendar/daygrid/main.css";
+
+/* 優先度ごとのスタイル */
+.priority-1 {
+  background-color: #f8d7da !important; /* 高優先度: 赤 */
+}
+
+.priority-2 {
+  background-color: #fff3cd !important; /* 中優先度: オレンジ */
+}
+
+.priority-3 {
+  background-color: #d4edda !important; /* 低優先度: 緑 */
+}
